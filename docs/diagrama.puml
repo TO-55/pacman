@@ -1,0 +1,125 @@
+@startuml
+class Juego
+{
+-Mapa:mapa
+-Fin:fin
+}
+class Personaje
+{
++ MoverAbajo()
++ MoverArriba()
+-Estado:Estados[2]
+-Color:Colores[5]
+}
+class Usuario
+class IA
+class Controlador
+{
+-LimiteTiempo:Tiempo
+}
+class Mapa
+{
+-Personaje:personajes[5]
+}
+class Pacman
+{
+-Corazon:corazones[3]
+}
+class Fantasma
+{
+-Estado:Estados
+}
+class Pastilla
+class Fin 
+class Color
+class Corazon
+class Numero
+class Depredador
+class Bucle
+{
++Transportar(Pacman)
+}
+Class Presa 
+class Punto
+class Fruta
+class Estado
+{
+-Color:Colores[5]    
+}
+class ContadorPuntaje
+class Amarillo
+class SumaTiempo
+{
++Sumar(Numeros)
+}
+class LimiteTiempo
+{
+-Numero:Numeros[240]   
+}
+class Azul
+class Rojo
+class Rosa
+class Naranja
+class AzulCobarde
+class Punto
+enum EstadoFisico
+{
++ModoDepredador
++AcumularTotalPuntos
++REducirTotalCorazones
+}
+class ContadorPuntaje
+{
++SumarMultiplo(fruta)
++Sumar(Punto)
+}
+class GestorColision
+{
++Atacar(Pacman)
++Restar (Corazon)
++Comer (Fantasma)
++comer(Punto)
++comer(Fruta)
+}
+class ObjetoColision
+{
+-GestorColision:Acciones[5]
+}
+
+
+Juego *-- Mapa
+Mapa "1" *-- "*" Personaje
+Usuario --|> Controlador
+IA --|> Controlador
+Controlador o-- Personaje
+Pacman --|> Personaje
+Fantasma --|> Personaje
+Personaje "1" *-- "2" Estado
+Depredador --|> Estado
+Presa --|> Estado 
+Personaje "1" *-- "5" Color 
+Personaje --|> ObjetoColision
+ObjetoColision *-- GestorColision
+Rosa --|> Color 
+Naranja --|> Color
+Azul --|> Color
+Rojo --|> Color
+Amarillo --|> Color
+AzulCobarde --|> Color
+Fruta --|> ObjetoColision
+Pastilla --|> ObjetoColision
+Pacman "1" *-- "3" Corazon
+Personaje "1" o-- "*" Punto
+Punto *-- ContadorPuntaje
+Punto -|> ObjetoColision
+Estado "1" *-- "2" Color 
+Pastilla o-- EstadoFisico
+Personaje "1" o-- "*" Pastilla
+Personaje "1" o-- "*" Fruta
+Personaje "1" o-- "1" Bucle
+Juego *-- Fin
+Fin o-- EstadoFisico
+Controlador "1" *-- "1" LimiteTiempo
+LimiteTiempo "1" *-- "*" Numero
+Numero o-- SumaTiempo
+@enduml
