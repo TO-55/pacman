@@ -2,5 +2,11 @@
 #include<TazoDorado.hpp>
 int main()
 {
-    std::cout<<"imprimir en archivo c++"<<std::endl;
+    TazoDorado coqueto;
+    coqueto.Flotar();
+    std::cout
+        <<"¿El objeto esta flotando?"
+        <<std::endl
+        <<coqueto.Flotando()
+    <<std::endl; 
 } 
