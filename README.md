@@ -11,7 +11,8 @@ Fantasma Verde,
 Fantasma Azul,
 Fantasma Amarillo.
 
-//Busca la sintaxis Markdown pa que sepas
+//Busca la sintaxis Markdown pa que sepas //Y mira el proyecto de un ruso (https://github.com/ArthurSonzogni/FTXUI.git)
+
 ## Controles
 
 ## Compilar
