@@ -16,5 +16,5 @@ Fantasma Amarillo.
 ## Controles
 
 ## Compilar
- para compiñlar el projecto ejecutar el comando
+ para compilar el projecto ejecutar el comando
  > make run

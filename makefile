@@ -20,3 +20,10 @@ bin/animacion : src/canvas_animated.cpp
 
 assets/mensaje : bin/tazo
 	./bin/tazo  > assets/mensaje
+
+runPrueba : bin/prueba
+	./bin/prueba
+
+bin/prueba : src/prueba.cpp
+	g++ src/prueba.cpp -Iinclude -o bin/prueba -std=c++2a -lftxui-screen -lftxui-dom -lftxui-component
+
